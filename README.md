@@ -1,17 +1,9 @@
-# **Azure Virtual Machine with FrontDoor.**
-## This script creates resources based on below architecture :
+# **Azure Virtual Machine creation using Terraform.**
 
-![](VM.png)
-
-### **Assumptions in the architecture :**
-
-1. We are using Azure Virtual Machines (IaaS architecture) 
-2. Application gateway is used for load balancing.
-3. This architecture has Azure Front Door component as well, this is considering global redundancy in the mind. We can use same piece of code and deploy resource on another region, whcih would allow us to use Front Door for regional DR.
 
 ### **Explanation**
 
-This code is parameterized and we are using different modules for every Azure Resource. This allows us to manage our code along with enabling the reusability. The parent directory **Linux Virtual Machine Deployment** contains two subfolders :
+This code is parameterized and we are using different modules for every Azure Resource. This allows us to manage our code along with enabling the reusability. This repositiry contains two subfolders :
 
 1. terraform-modules
      * This directory contains all the modules.
@@ -51,3 +43,4 @@ To run this example, simply follow to steps below:
 1. Use Terraform workspaces for easier management of the deployments. This can also help us manage Dev, UAT and Production deployments instead of creating multiple state files\directories.
 2. If you are creating new resources\variables. Ensure naming convention is easily relatable, since we have a lot of variables in this code.
 3. Use conditionals to avoid unwanted surprises.
+
